@@ -41,6 +41,7 @@
 
       // Get User Details
       public function GetLoginDetails($data){
+        echo "<pre>";
 
         $userDetails = array("username" => $data['username'] , "hashcode" => $_SESSION['userDetail']['hashCode']);                                                                    
         $userDetails_string = json_encode($userDetails);
@@ -55,15 +56,18 @@
         curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
         curl_setopt($ch,CURLOPT_POSTFIELDS, $userDetails_string);
   
+  
         $resultUserDetails=curl_exec ($ch); //execute
         curl_close ($ch);
         $details=(json_decode($resultUserDetails, true));
         var_dump($details);
+        echo "</pre>";
         $_SESSION['logindetails']  = $details;
     }
 
     // Get User Details
     public function GetCustomerDetails($data){
+      echo "<pre>";
       
       $customerDetails = array("kimlikTipi" => $this->kimlikTipi, "kimlikNo" => $this->kimlikNo);                                                                    
       $customerDetails_string = json_encode($customerDetails);
@@ -90,6 +94,7 @@
       curl_close ($ch);
       $ctDetailResult=(json_decode($resultCustomerDetails, true));
       var_dump($ctDetailResult);
+      echo "</pre>";
       $_SESSION['customerDetails'] = $ctDetailResult;
 
 

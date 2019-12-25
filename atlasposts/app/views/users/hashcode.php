@@ -1,50 +1,24 @@
- <!-- Sidebar -->
- <?php require APPROOT . '/views/inc/header.php' ; ?>
+<?php require APPROOT . '/views/inc/header.php'; ?>
 
+<?php if(isset($_SESSION['AWSession'])) : ?>
 
-  <div id="wrapper">
-
-    <!-- Sidebar -->
-    <?php require APPROOT . '/views/inc/sidebar.php' ; ?>
-
-
-    <div id="content-wrapper">
-
-      <div class="container-fluid">
-
-        <!-- Breadcrumbs-->
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item">
-            <a href="#">Anasayfa</a>
-          </li>
-          <li class="breadcrumb-item active">Ürünler</li>
-        </ol>
-
-        <!-- Area Chart Example-->
-        <div class="card mb-3">
-          <div class="card-header">
-            </div>
-          <div class="card-body">
-            <canvas id="myAreaChart" width="100%" height="30"></canvas>
-          </div>
+<div align="center">
+<a href="<?php echo URLROOT; ?>/users/login" class="btn btn-light"><i class="fa fa-backward"></i>Back</a>
+    <h2>Giriş Yaptınız</h2>
+    <form method="POST">
+        <div class="form-group" >
+            <label for="title">Details: <sup>*</sup></label>
+            <?php
+                echo "<pre>";
+                    $this->userModel->GetCustomerDetails($data);
+                echo "</pre>";
+            ?> 
         </div>
-      </div>
-      <!-- /.container-fluid -->
+    </form>
+</div>
 
-    </div>
-    <!-- /.content-wrapper -->
+<?php endif; ?>
 
-  </div>
-  <!-- /#wrapper -->
+<?php require APPROOT . '/views/inc/footer.php'; ?>
 
-  <!-- Scroll to Top Button-->
-  <a class="scroll-to-top rounded" href="#page-top">
-    <i class="fas fa-angle-up"></i>
-  </a>
 
-  <?php require APPROOT . '/views/inc/footer.php' ; ?>
-
-  <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/style.css">
-</body>
-
-</html>

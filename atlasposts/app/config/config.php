@@ -10,7 +10,7 @@
   // URL Root
   define('URLROOT', 'http://localhost/atlasposts/');
   // Site Name
-  define('SITENAME', 'Atlas Web Service');
+  define('SITENAME', 'atlasposts');
 
 
 
