@@ -27,7 +27,7 @@
   }
 
   function isLoggedIn(){
-    if(isset($_SESSION['user_id'])){
+    if(isset($_SESSION['AWSession'])){
       return true;
     } else {
       return false;

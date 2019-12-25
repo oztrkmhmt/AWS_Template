@@ -9,10 +9,14 @@
     protected $currentMethod = 'index';
     protected $params = [];
 
+    protected $util;
+
     public function __construct(){
       //print_r($this->getUrl());
 
       $url = $this->getUrl();
+      $this->util = new Utils;
+
 
       // Look in controllers for first value
       if(file_exists('../app/controllers/' . ucwords($url[0]). '.php')){

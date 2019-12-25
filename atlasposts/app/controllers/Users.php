@@ -44,7 +44,7 @@
           }else{
             
             $_SESSION['AWSession'] = $this->sessionUser;
-            $this->view('users/hashcode',$data);
+            $this->view('users/main',$data);
             
           }
         
